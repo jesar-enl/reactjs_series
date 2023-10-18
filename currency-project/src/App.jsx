@@ -4,6 +4,15 @@ import { InputBox } from './components/index';
 import useCurrency from './hooks/useCurrency';
 
 function App() {
+  // current date
+  const getDate = () => {
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const year = today.getFullYear();
+    const date = today.getDate();
+    return `${date}/${month}/${year}`;
+  };
+
   const [amount, setAmount] = useState(1);
   const [from, setFrom] = useState('usd');
   const [to, setTo] = useState('ugx');
@@ -36,6 +45,10 @@ function App() {
     >
       <div className="w-full">
         <div className="w-full max-w-md mx-auto border border-gray-70 rounded-lg p-5 backdrop-blur-sm bg-white/20">
+          <div className="p-4 text-white bg-slate-700 text-center font-bold text-4xl rounded-xl mb-2">
+            {getDate()}
+          </div>
+
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -61,7 +74,7 @@ function App() {
                 className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-800 text-white px-2 py-0.5 flex"
                 onClick={swapCurrencies}
               >
-                Swap
+                <span className='text-lg'>SWAP</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6 transform rotate-90"

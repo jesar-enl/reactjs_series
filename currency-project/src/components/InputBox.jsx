@@ -63,8 +63,8 @@ const InputBox = ({
 InputBox.propTypes = {
   label: PropTypes.string.isRequired,
   amount: PropTypes.number.isRequired,
-  onAmountChange: PropTypes.func.isRequired,
-  onCurrencyChange: PropTypes.func.isRequired,
+  onAmountChange: PropTypes.func,
+  onCurrencyChange: PropTypes.func,
   currencyOptions: PropTypes.arrayOf(PropTypes.string),
   selectedCurrency: PropTypes.string,
   amountDisabled: PropTypes.bool,
